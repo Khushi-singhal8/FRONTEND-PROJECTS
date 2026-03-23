@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Canvas + SVG Demo</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom, #dfe9f3, #ffffff);
+      overflow: hidden;
+    }
+
+    #myCanvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+
+    svg {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      z-index: 2;
+    }
+
+    text {
+      font-size: 18px;
+      fill: #333;
+    }
+
+    rect.button {
+      fill: #4a90e2;
+      cursor: pointer;
+      transition: fill 0.3s;
+      rx: 10;
+    }
+
+    rect.button:hover {
+      fill: #357ab8;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Canvas: Animated bubbles -->
+<canvas id="myCanvas" width="800" height="500"></canvas>
+
+<!-- SVG: Vector UI elements -->
+<svg width="300" height="200">
+  <rect class="button" x="10" y="10" width="120" height="40" />
+  <text x="35" y="35">SVG Button</text>
+
+  <circle cx="180" cy="30" r="20" fill="tomato" />
+  <text x="160" y="70">SVG Circle</text>
+</svg>
+
+<script>
+  // Canvas animation: floating bubbles
+  const canvas = document.getElementById("myCanvas");
+  const ctx = canvas.getContext("2d");
+
+  const bubbles = [];
+
+  // Generate random bubbles
+  for (let i = 0; i < 20; i++) {
+    bubbles.push({
+      x: Math.random() * canvas.width,
+      y: canvas.height + Math.random() * 100,
+      r: 10 + Math.random() * 20,
+      speed: 0.5 + Math.random() * 1,
+      color: `rgba(100, 149, 237, ${Math.random() * 0.7 + 0.3})`
+    });
+  }
+
+  function drawBubbles() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    for (let b of bubbles) {
+      ctx.beginPath();
+      ctx.arc(b.x, b.y, b.r, 0, Math.PI * 2);
+      ctx.fillStyle = b.color;
+      ctx.fill();
+      b.y -= b.speed;
+      if (b.y + b.r < 0) {
+        b.y = canvas.height + b.r;
+        b.x = Math.random() * canvas.width;
+      }
+    }
+    requestAnimationFrame(drawBubbles);
+  }
+
+  drawBubbles();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>BuildMart | Premium Materials</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Poppins:wght@400;600;700&family=Orbitron:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="logo">Kanha Builders</div>
+
+  <!-- Hamburger menu for mobile -->
+  <div class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <div class="nav-links" id="navLinks">
+    <a href="#">Home</a>
+    <div class="dropdown">
+      <a href="#" class="dropbtn">Materials ▼</a>
+      <div class="dropdown-content">
+        <a href="cement.html">🧱 Cement</a>
+        <a href="steel.html">🏗 Steel</a>
+        <a href="sand.html">⛰ Sand</a>
+        <a href="bricks.html">🧱 Bricks</a>
+      </div>
+    </div>
+    <a href="#about">About Us</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+  <a href="cart.html" class="shop-btn">🛒 Cart (<span id="cartCount">0</span>)</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div id="canvas-container"></div>
+  <div class="hero-content">
+    <h1>Where Strength Begins</h1>
+    <p>Not Just Materials. The Backbone of Your Build.</p>
+    <button class="cta" id="startBtn">Start Shopping</button>
+  </div>
+</section>
+
+<!-- MATERIALS -->
+<section class="materials-section" id="materials">
+    <h2 class="section-title">Our Construction Materials</h2>
+    <p class="section-subtitle">Choose a category to explore premium products</p>
+    <div class="materials-grid">
+        <button class="material-btn" onclick="window.location.href='cement.html'">🧱 Cement</button>
+        <button class="material-btn" onclick="window.location.href='steel.html'">🏗 Steel</button>
+        <button class="material-btn" onclick="window.location.href='sand.html'">⛰ Sand</button>
+        <button class="material-btn" onclick="window.location.href='bricks.html'">🧱 Bricks</button>
+    </div>
+</section>
+
+<!-- ================= ABOUT US ================= -->
+<section class="about-section" id="about">
+
+    <h2 class="about-title">About Us</h2>
+
+    <!-- Divider -->
+    <div class="divider"></div>
+
+    <!-- Description -->
+    <p class="about-desc">
+        At <span>Kanha Builders</span>, we deliver premium construction materials
+        including Cement, Steel, Sand and Bricks. 
+        With trusted brands, competitive pricing, and fast delivery,
+        we help builders, contractors, and homeowners build with confidence.
+    </p>
+
+    <!-- Features -->
+    <div class="about-features">
+
+        <div class="feature-box">
+            <h3>✔ Premium Quality</h3>
+            <p>Only certified and trusted materials for long-lasting construction.</p>
+        </div>
+
+        <div class="feature-box">
+            <h3>✔ Trusted Brands</h3>
+            <p>ACC, Ambuja, Tata Steel, JSW and other top brands available.</p>
+        </div>
+
+        <div class="feature-box">
+            <h3>✔ Fast Delivery</h3>
+            <p>On-time doorstep delivery to keep your project running smoothly.</p>
+        </div>
+
+        <div class="feature-box">
+            <h3>✔ Best Pricing</h3>
+            <p>Wholesale rates with transparent pricing and no hidden charges.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <h2>Contact Us</h2>
+  <div class="contact-grid">
+    <div class="contact-card">
+      <h3>Phone</h3>
+      <p>+91 9876543210</p>
+    </div>
+    <div class="contact-card">
+      <h3>Email</h3>
+      <p>info@kanhabuilders.com</p>
+    </div>
+    <div class="contact-card">
+      <h3>Address</h3>
+      <p>123 BuildMart Street, New Delhi, India</p>
+    </div>
+  </div>
+
+  <div class="map-container" style="margin-top:30px; width:100%; max-width:1000px; height:450px; margin:auto;">
+    <a href="https://www.google.com/maps/place/JCG7%2BXF,+Tigri,+Nai+Basti+Dundahera,+Ghaziabad,+Uttar+Pradesh+201009" target="_blank" style="display:block; width:100%; height:100%;">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3504.987654321!2d77.4829105!3d28.6321471!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d03b123456789%3A0xabcdef1234567890!2sJCG7%2BXF%2C+Tigri%2C+Nai+Basti+Dundahera%2C+Ghaziabad,+Uttar+Pradesh+201009!5e0!3m2!1sen!2sin!4v1672900000000!5m2!1sen!2sin" 
+        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
+      </iframe>
+    </a>
+  </div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
