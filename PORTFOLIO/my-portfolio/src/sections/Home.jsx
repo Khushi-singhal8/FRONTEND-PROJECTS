@@ -135,7 +135,7 @@ export default function Home() {
               </a>
 
               <a
-                href="/khushi singhal resume.pdf"
+                href="/resume.pdf"
                 download
                 className="px-6 py-3 rounded-full text-lg font-medium text-black bg-white hover:bg-gray-200 shadow-lg hover:scale-105 transition-all"
               >

@@ -10,9 +10,9 @@ export default function About() {
   ];
 
   const stats = [
-    { label: "Experience", value: "3+ Years" },
-    { label: "Projects", value: "20+" },
-    { label: "Technologies", value: "15+" },
+    { label: "Experience", value: "2+ Years" },
+    { label: "Projects", value: "2-3 Large, 15+ Small" },
+    { label: "Technologies", value: "8-10+" },
   ];
 
   return (
@@ -20,7 +20,6 @@ export default function About() {
       id="about"
       className="min-h-screen w-full flex items-center justify-center relative bg-black text-white overflow-hidden"
     >
-      {/* Glow Background */}
       <div className="absolute inset-0 pointer-events-none">
         {glows.map((c, i) => (
           <div
@@ -38,7 +37,6 @@ export default function About() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true, amount: 0.4 }}
         >
-          {/* Profile Image */}
           <motion.div
             className="relative w-40 h-40 md:w-50 md:h-50 rounded-2xl overflow-hidden shadow-2xl bg-linear-to-br from-[#1cd8d2]/20 to-[#302b63]/20 border border-[#1cd8d2]/25"
             whileHover={{ scale: 1.02 }}
@@ -51,25 +49,23 @@ export default function About() {
             />
           </motion.div>
 
-          {/* Text Content */}
           <div className="flex-1 flex flex-col justify-center text-center md:text-left">
             <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight bg-linear-to-r from-[#1cd9d2] via-[#00b8ff] to-[#1cd8d2] bg-clip-text text-transparent">
               Khushi Singhal
             </h2>
 
             <p className="mt-2 text-lg text-white/90 font-semibold">
-              Full Stack Developer
+              Frontend Developer
             </p>
 
             <p className="mt-4 text-gray-300 leading-relaxed text-base sm:text-lg max-w-2xl">
-              I build scalable, modern applications with a strong focus on
-              clean architecture, delightful UX, and performance. My toolkit
-              spans Java, React, Next.js, TypeScript, Tailwind CSS, and
-              RestfulAPI—bringing ideas to life from concept to production with
-              robust APIs and smooth interfaces.
+              I build responsive, modern web applications with a strong focus on
+              clean UI, smooth interactions, and real-world functionality. My toolkit
+              spans HTML, CSS, JavaScript, React, Bootstrap, Three.js, and TensorFlow.js —
+              bringing ideas to life from concept to deployment with intuitive interfaces
+              and solid frontend architecture.
             </p>
 
-            {/* Stats */}
             <div className="mt-6 grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4 max-w-xl">
               {stats.map((item, i) => (
                 <motion.div
@@ -90,7 +86,6 @@ export default function About() {
               ))}
             </div>
 
-            {/* Buttons */}
             <div className="mt-6 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center md:justify-start">
               <a
                 href="#projects"
@@ -100,7 +95,7 @@ export default function About() {
               </a>
 
               <a
-                                href="#contact"
+                href="#contact"
                 className="inline-flex items-center justify-center rounded-lg border border-white/20 bg-white/10 text-white font-semibold px-5 py-3 hover:bg-white/20 transition"
               >
                 Get In Touch

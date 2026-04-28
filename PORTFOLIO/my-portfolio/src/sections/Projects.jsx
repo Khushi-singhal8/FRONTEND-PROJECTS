@@ -12,13 +12,7 @@ import {
   AnimatePresence
 } from "framer-motion";
 
-import img1 from "../assets/img1.JPG";
-import img2 from "../assets/img2.JPG";
-import img3 from "../assets/img3.JPG";
 
-/* -------------------- */
-/* Mobile Detection Hook */
-/* -------------------- */
 
 function useIsMobile(query = "(max-width: 768px)") {
   const [isMobile, setIsMobile] = useState(false);
@@ -27,7 +21,6 @@ function useIsMobile(query = "(max-width: 768px)") {
     if (typeof window === "undefined") return;
 
     const media = window.matchMedia(query);
-    // eslint-disable-next-line react-hooks/set-state-in-effect
     setIsMobile(media.matches);
 
     const listener = () => setIsMobile(media.matches);
@@ -39,36 +32,25 @@ function useIsMobile(query = "(max-width: 768px)") {
   return isMobile;
 }
 
-/* -------------------- */
-/* Projects Component   */
-/* -------------------- */
-
 export default function Projects() {
   const sceneRef = useRef(null);
   const isMobile = useIsMobile();
 
-  const projects = useMemo(() => [
-    {
-      title: "NK Studio",
-      link: "https://nkstudio.com",
-      bgColor: "#0f172a",
-      image: img1
-    },
-    {
-      title: "Gamify",
-      link: "https://gamifyapp.com",
-      bgColor: "#111827",
-      image: img2
-    },
-    {
-      title: "Hungry Tiger",
-      link: "https://hungrytiger.com",
-      bgColor: "#1e293b",
-      image: img3
-    }
-  ], []);
+  const projects = [
+  {
+    title: "IIT Roorkee — Virtual Lab",
+    link: "https://github.com/Khushi-singhal8/VIRTUAL-LAB-",
+    bgColor: "#0f172a",
+    image: "/image1.png"
+  },
+  {
+    title: "Plant Disease Detector",
+    link: "https://github.com/Khushi-singhal8/plant-disease-detector",
+    bgColor: "#111827",
+    image: "/image2.png"
+  }
+];
 
-  /* Scroll tracking */
   const { scrollYProgress } = useScroll({
     target: sceneRef,
     offset: ["start start", "end end"]
@@ -91,16 +73,13 @@ export default function Projects() {
     <section
       id="projects"
       ref={sceneRef}
-      className="relative text-white"
+      className="relative text-white bg-black"
       style={{
-        height: `${projects.length * 100}vh`,
-        backgroundColor: activeProject.bgColor,
-        transition: "background-color 0.5s ease"
+        height: `${projects.length * 100}vh`
       }}
     >
       <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden">
 
-        {/* Title */}
         <h2 className="absolute top-10 text-3xl font-semibold tracking-wide">
           My Work
         </h2>
@@ -131,7 +110,6 @@ export default function Projects() {
               )}
             </AnimatePresence>
 
-            {/* Image Card */}
             <div className="relative w-full overflow-hidden rounded-2xl shadow-2xl">
               <img
                 src={project.image}
@@ -139,12 +117,9 @@ export default function Projects() {
                 className="w-full h-[65vh] object-cover"
                 loading="lazy"
               />
-
-              {/* Overlay Gradient */}
-              <div className="absolute inset-0 bg-linear-to-t from-black/50 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
             </div>
 
-            {/* Visit Button */}
             <div className="mt-6 text-center">
               <a
                 href={project.link}
@@ -152,7 +127,7 @@ export default function Projects() {
                 rel="noopener noreferrer"
                 className="inline-block px-6 py-3 bg-white text-black rounded-full font-medium hover:scale-105 transition"
               >
-                Visit Project
+                {index === projects.length - 1 ? "Follow on GitHub" : "View on GitHub"}
               </a>
             </div>
           </div>

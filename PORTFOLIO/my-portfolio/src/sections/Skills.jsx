@@ -4,7 +4,6 @@ import {
   FaJava,
   FaReact,
   FaPython,
-  FaDocker,
   FaNodeJs,
 } from "react-icons/fa";
 import {
@@ -13,7 +12,7 @@ import {
   SiTailwindcss,
   SiFastapi,
   SiMongodb,
-  SiAngular,
+  
 } from "react-icons/si";
 
 export default function Skills() {
@@ -25,10 +24,9 @@ export default function Skills() {
     { icon: <SiTailwindcss />, name: "Tailwind CSS" },
     { icon: <SiFastapi />, name: "FastAPI" },
     { icon: <FaPython />, name: "Python" },
-    { icon: <FaDocker />, name: "Docker" },
     { icon: <FaNodeJs />, name: "Node.js" },
     { icon: <SiMongodb />, name: "MongoDB" },
-    { icon: <SiAngular />, name: "Angular" },
+
   ];
 
   const repeated = [...skills, ...skills];

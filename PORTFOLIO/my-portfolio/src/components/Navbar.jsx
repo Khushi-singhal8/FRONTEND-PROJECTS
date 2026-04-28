@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from "react";
 import OverlayMenu from "./overlayMenu";
-import Logo from "../assets/logo.png";
 import { FiMenu } from "react-icons/fi";
 
 export default function Navbar() {
@@ -81,7 +80,6 @@ export default function Navbar() {
       >
         {/* Logo */}
         <div className="flex items-center space-x-2">
-          <img src={Logo} alt="logo" className="h-8 w-8" />
           <span className="text-xl font-bold text-white hidden sm:block">
             Khushi
           </span>

@@ -12,8 +12,6 @@ import {
   useMotionValueEvent
 } from "framer-motion";
 
-
-
 function useIsMobile(query = "(max-width: 768px)") {
   const [isMobile, setIsMobile] = useState(false);
 
@@ -21,7 +19,6 @@ function useIsMobile(query = "(max-width: 768px)") {
     if (typeof window === "undefined") return;
 
     const media = window.matchMedia(query);
-    // eslint-disable-next-line react-hooks/set-state-in-effect
     setIsMobile(media.matches);
 
     const listener = () => setIsMobile(media.matches);
@@ -33,37 +30,29 @@ function useIsMobile(query = "(max-width: 768px)") {
   return isMobile;
 }
 
-/* --------------------------- */
-/* Experience Data */
-/* --------------------------- */
-
 const experiences = [
   {
-    role: "Web Developer",
-    company: "Brain Mentors",
-    duration: "2022",
+    role: "Frontend Developer Intern",
+    company: "IIT Roorkee — Virtual Mechanical Labs",
+    duration: "Sept 2023 – Present · Remote",
     description:
-      "Built high-performance apps, integrated AI features, improved engagement by 10%."
+      "Built interactive 3D mechanical experiment simulations using Three.js. Designed responsive UIs with Bootstrap and advanced CSS. Wrote experiment theory and step-by-step procedure content to enhance student learning."
   },
   {
-    role: "Web Developer Intern",
-    company: "Mobisoft Technologies",
-    duration: "2022 - 2023",
+    role: "Frontend Developer — Freelance & Self-Directed Work",
+    company: "Independent · Remote",
+    duration: "2024 – 2025",
     description:
-      "Gained hands-on web development experience and improved UI performance."
+      "Worked on multiple self-directed web development projects, building fully functional frontend applications. Gained hands-on experience with React, REST API integration, responsive design, and browser-based AI using TensorFlow.js."
   },
   {
-    role: "Graduate Engineer",
-    company: "HCL Technologies",
-    duration: "2024 - 2025",
+    role: "Open Source Contributor",
+    company: "GitHub · Personal Repositories",
+    duration: "2023 – Present",
     description:
-      "Built frontend of GenAI-powered PV Intake App with Next.js & TypeScript."
+      "Actively maintains public repositories on GitHub covering frontend projects, UI experiments, and web tools. Follows clean code practices, semantic commits, and responsive design principles across all projects."
   }
 ];
-
-/* --------------------------- */
-/* Experience Item Component */
-/* --------------------------- */
 
 function ExperienceItem({
   exp,
@@ -88,13 +77,10 @@ function ExperienceItem({
   if (layout === "desktop") {
     return (
       <div className="relative flex items-start">
-        {/* Dot */}
         <motion.div
           className="absolute -left-3.5 top-2 w-3 h-3 rounded-full bg-white shadow"
           style={{ opacity }}
         />
-
-        {/* Card */}
         <motion.article
           style={{ opacity, y }}
           transition={{ duration: 0.4, delay: idx * 0.15 }}
@@ -117,7 +103,6 @@ function ExperienceItem({
     );
   }
 
-  /* Mobile Layout */
   return (
     <motion.article
       style={{ opacity, y }}
@@ -139,10 +124,6 @@ function ExperienceItem({
     </motion.article>
   );
 }
-
-/* --------------------------- */
-/* Main Experience Section */
-/* --------------------------- */
 
 export default function Experience() {
   const sceneRef = useRef(null);
@@ -189,15 +170,11 @@ export default function Experience() {
 
         {!isMobile && (
           <div className="relative w-full max-w-4xl">
-            {/* Timeline Base */}
             <div className="absolute left-0 top-0 bottom-0 w-0.75 bg-white/20" />
-
-            {/* Animated Line */}
             <motion.div
               style={{ height: lineSize }}
               className="absolute left-0 top-0 w-0.75 bg-white origin-top"
             />
-
             <div className="flex flex-col gap-16 ml-10">
               {experiences.map((exp, idx) => (
                 <ExperienceItem
