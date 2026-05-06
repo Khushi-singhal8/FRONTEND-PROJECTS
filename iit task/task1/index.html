@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Log Plot Task (Multiple Points)</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Log<sub>10</sub>(x) vs y Plot</h2>
+
+    
+    <label for="xRange">X (1 to 100):</label>
+    <input type="range" id="xRange" min="1" max="100" step="0.1" value="10">
+    <span id="xValue">10</span>
+    <br>
+
+    <label for="yRange">Y (1 to 10):</label>
+    <input type="range" id="yRange" min="1" max="10" step="0.1" value="5">
+    <span id="yValue">5</span>
+
+    <table>
+      <thead>
+        <tr>
+          <th>X</th>
+          <th>Y</th>
+          <th>log<sub>10</sub>(x)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td id="xOut">10</td>
+          <td id="yOut">5</td>
+          <td id="logOut">1</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <button id="resetBtn">Reset Plot</button>
+
+    <canvas id="logChart" width="400" height="200"></canvas>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

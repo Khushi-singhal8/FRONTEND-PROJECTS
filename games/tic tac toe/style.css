@@ -1,0 +1,117 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #51053f, #240228);
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.game-container {
+  text-align: center;
+  padding: 30px;
+  background-color: #75496f;
+  border-radius: 20px;
+  box-shadow: 5px 4px 4px white;
+  transition: transform 0.3s ease;
+  border: 2px solid #fefefe;
+}
+
+.game-container:hover {
+  transform: scale(1.02);
+}
+
+h1 {
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+  color: #0a0000;
+  text-shadow: 2px 2px 2px rgb(249, 244, 244);
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-gap: 10px;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  background-color: #fae5fa;
+  font-size: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  transition: background-color 0.3s, transform 0.2s;
+  box-shadow: 4px 4px 4px black;
+  border: 3px solid #0b0000;
+}
+
+.cell:hover {
+  background-color: #f9baef;
+  transform: scale(1.05);
+}
+
+.cell.x {
+  color: #160214;
+  animation: pop 0.3s ease;
+}
+
+.cell.o {
+  color:  #160214;
+  animation: pop 0.3s ease;
+}
+
+.cell.winner {
+  background-color: #c276b4 !important;
+  animation: blink 0.6s ease-in-out infinite alternate;
+}
+
+#restartBtn {
+  padding: 10px 20px;
+  font-size: 16px;
+  text-shadow: 1px 1px 1px white;
+  cursor: pointer;
+  background-color: #330f31dc;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#restartBtn:hover {
+  background-color: #a95299;
+}
+
+
+@keyframes pop {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes blink {
+  0% {
+    background-color: #b76cb6;
+  }
+  100% {
+    background-color: #ba62aa;
+  }
+}

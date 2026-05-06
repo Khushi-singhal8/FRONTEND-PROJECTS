@@ -1,0 +1,241 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url('https://images.unsplash.com/photo-1590418606746-018840f9cd0f?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center fixed;
+  background-size: cover;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+
+.box {
+  position: relative;
+  width: 350px;
+  padding: 40px 30px;
+  border-radius: 20px;
+  overflow: hidden;
+  z-index: 1;
+  cursor: pointer;
+  animation: floatUpDown 6s ease-in-out infinite;
+}
+
+/* Floating animation for box */
+@keyframes floatUpDown {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* Glow Border */
+.box::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(60deg, #1fafc5, #00ffff, #ff0055);
+  animation: rotating 4s linear infinite;
+  filter: drop-shadow(0 15px 50px #000);
+  z-index: -2;
+  transition: filter 0.3s ease;
+}
+
+/* Inner frame */
+.box::after {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  background: #1e1e2f;
+  border-radius: 15px;
+  border: 8px solid #25252b;
+  z-index: -1;
+}
+
+@keyframes rotating {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Bonus pulse on hover */
+.box:hover::before {
+  animation: rotatingPulse 2s linear infinite;
+}
+
+@keyframes rotatingPulse {
+  0% {
+    filter: drop-shadow(0 15px 50px #1fa8c7);
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    filter: drop-shadow(0 20px 70px #1facc5);
+    transform: rotate(180deg) scale(1.05);
+  }
+  100% {
+    filter: drop-shadow(0 15px 50px #1da8ac);
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+.login-container {
+  position: relative;
+  z-index: 2;
+  color: white;
+}
+
+.login-container h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 22px;
+  letter-spacing: 1px;
+  background: linear-gradient(90deg, #1d92bd, #00ffff, #ff0055);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 3s linear infinite, textShadowPulse 4s ease-in-out infinite;
+}
+
+/* Shimmer for heading text */
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Pulsing shadow for heading */
+@keyframes textShadowPulse {
+  0%, 100% {
+    text-shadow: 0 0 10px #18acb4, 0 0 20px #00ffff;
+  }
+  50% {
+    text-shadow: 0 0 20px #1fb0b5, 0 0 30px #33ffff;
+  }
+}
+
+/* HIDDEN BY DEFAULT */
+#loginForm {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transform: scaleY(0.8);
+  transform-origin: top;
+  transition: all 0.5s ease;
+  pointer-events: none;
+}
+
+/* SHOW FORM WHEN CLASS ADDED */
+#loginForm.active {
+  opacity: 1;
+  max-height: 500px;
+  transform: scaleY(1);
+  margin-top: 10px;
+  pointer-events: auto;
+}
+
+/* Animate inputs when form is active */
+#loginForm.active input {
+  animation: fadeScaleIn 0.6s ease forwards;
+  opacity: 0;
+  transform: scale(0.95);
+}
+
+#loginForm.active input:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+#loginForm.active input:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+@keyframes fadeScaleIn {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.login-container input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  background: #2c2c3a;
+  border: none;
+  color: white;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+  transition: box-shadow 0.3s ease, background 0.3s ease, border 0.3s ease;
+}
+
+.login-container input:focus {
+  box-shadow: 0 0 8px 2px #158e99;
+  border: 1px solid #23abbd;
+  background: #3a3a4a;
+}
+
+/* Softer sign-in button glow and bounce on hover */
+.login-container button {
+  width: 100%;
+  padding: 12px;
+  background: #00f2ff;
+  color: #000;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  animation: pulseGlow 3s infinite;
+  box-shadow: 0 0 5px #00f2ff, 0 0 12px #00f2ff;
+}
+
+.login-container button:hover {
+  background: #00c2cc;
+  box-shadow: 0 0 12px #00ffff, 0 0 25px #00ffff;
+  transform: translateY(-4px);
+}
+
+/* Button pulse glow animation */
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 5px #00f2ff, 0 0 12px #00f2ff;
+  }
+  50% {
+    box-shadow: 0 0 8px #00ffff, 0 0 18px #00ffff;
+  }
+}
+
+.links {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+}
+
+.links a {
+  color: #17a3ca;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.links a:hover {
+  text-decoration: underline;
+}

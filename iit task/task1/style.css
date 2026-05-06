@@ -1,0 +1,75 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #5e244d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  background-color: #f7b4cb;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0px 0px 20px #ccc;
+  text-align: center;
+}
+
+h2{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  text-shadow: 0px 0px 20px #5e244d;
+  font-size: 30px;
+}
+
+input[type="range"] {
+  width: 300px;
+  margin: 20px;
+  accent-color: rgb(159, 84, 132); 
+}
+
+
+label,
+span,
+p {
+  font-size: 15px;
+  color: #000;
+  font-weight: bold;
+  font-family: Arial, sans-serif;
+}
+
+table {
+  margin: 30px auto;
+  border-collapse: collapse;
+  width: 60%;
+  background-color: rgb(250, 243, 243);
+  box-shadow: 0px 4px 20px white;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+
+}
+
+th, td {
+  border: 2px solid #0c010a;
+  padding: 8px;
+
+}
+
+canvas {
+  margin-top: 20px;
+  margin: 0 auto; 
+  background-color: white;
+  box-shadow: 0px 0px 15px black;
+
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  margin-bottom: 20px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 0px 15px white;
+  
+}

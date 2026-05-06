@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Demo of all common HTML tags without CSS">
+  <meta name="author" content="Khushi Singhal">
+  <title>All HTML Tags - Complete Version</title>
+  <link rel="stylesheet" href="style.css">
+  <base href="https://example.com/" target="_blank">
+</head>
+<body>
+  <header>
+    <h1>HTML Tags Demonstration</h1>
+    <nav>
+      <a href="#about">About</a> |
+      <a href="#form">Form</a> |
+      <a href="#media">Media</a> |
+      <a href="#graphics">Graphics</a> |
+      <a href="#extras">Extras</a> |
+      <a href="#rare">Rare Tags</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h1>Intro</h1>
+    <p><b>Name</b> : <span id="name">Khushi Singhal</span></p><br>
+    <p><b>Age</b> : <span id="age">20</span></p>
+  </div>
+  <main>
+    <section class="about">
+      <h2>Basic Text Tags</h2>
+      <p>This is a paragraph using the <strong>str</strong>ong tag and <em>emphasized</em> tag.</p>
+      <p><u>Underline</u>, <mark>highlight</mark>, <code>inline code</code>, and <abbr title="HyperText Markup Language">HTML</abbr></p>
+      <p>This is a <q>short quote</q> and a longer one below:</p>
+      <blockquote cite="https://developer.mozilla.org">
+        HTML is the standard markup language for Web pages.
+      </blockquote>
+      <p><b>Bold</b> vs <strong>Strong</strong>, <i>Italic</i> vs <em>Emphasis</em></p>
+      <p><del>Deleted text</del> and <ins>Inserted text</ins></p>
+      <p><small>Small text</small> and <sub>Subscript</sub> vs <sup>Superscript</sup></p>
+      <p>Keyboard input: <kbd>Ctrl + S</kbd></p>
+      <p>Variable example: <var>x = 10</var></p>
+      <p>Sample output: <samp>Hello, World!</samp></p>
+      <p>Time example: <time datetime="2025-07-17T14:30">2:30 PM</time></p>
+      <p>BiDi Override: <bdo dir="rtl">Hello</bdo></p>
+    </section>
+
+    <section>
+      <h2>Lists</h2>
+      <h3>Unordered List</h3>
+      <ul>
+        <li>Apple</li>
+        <li>Banana</li>
+        <li>Cherry</li>
+      </ul>
+
+      <h3>Ordered List</h3>
+      <ol>
+        <li>First</li>
+        <li>Second</li>
+        <li>Third</li>
+      </ol>
+
+      <h3>Description List</h3>
+      <dl>
+        <dt>HTML</dt>
+        <dd>Hyper Text Markup Language</dd>
+        <dt>CSS</dt>
+        <dd>Cascading Style Sheets</dd>
+      </dl>
+    </section>
+
+    <section>
+      <h2>Table</h2>
+      <table border="1">
+        <caption>User Info</caption>
+        <thead>
+          <tr>
+            <th >name </th>
+            <th >age </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Khushi</td>
+            <td>21</td>
+          </tr>
+          <tr>
+            <td>Alex</td>
+            <td>22</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="form">
+      <h2>Forms</h2>
+      <form>
+        <fieldset>
+          <legend>Contact Form</legend>
+
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required><br><br>
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required><br><br>
+
+          <label for="url">Website:</label>
+          <input type="url" id="url" name="url"><br><br>
+
+          <label for="tel">Phone:</label>
+          <input type="tel" id="tel" name="tel"><br><br>
+
+          <label for="range">Satisfaction:</label>
+          <input type="range" id="range" name="range" min="0" max="10"><br><br>
+
+          <label for="file">Upload File:</label>
+          <input type="file" id="file" name="file"><br><br>
+
+          <label>Gender:</label><br>
+          <input type="radio" id="male" name="gender" value="male">
+          <label for="male">Male</label><br>
+          <input type="radio" id="female" name="gender" value="female">
+          <label for="female">Female</label><br><br>
+
+          <label for="hobbies">Hobbies:</label><br>
+          <input type="checkbox" id="reading" name="hobby" value="reading">
+          <label for="reading">Reading</label><br>
+          <input type="checkbox" id="sports" name="hobby" value="sports">
+          <label for="sports">Sports</label><br><br>
+
+          <label for="country">Country:</label>
+          <select id="country" name="country">
+            <option value="india">India</option>
+            <option value="usa">USA</option>
+          </select><br><br>
+
+          <label for="message">Message:</label><br>
+          <textarea id="message" name="message" rows="4" cols="30"></textarea><br><br>
+
+          <input type="submit" value="Submit">
+          <button type="reset">Reset</button>
+        </fieldset>
+      </form>
+    </section>
+
+    <section id="media">
+      <h2>Media Tags</h2>
+      <h3>Image</h3>
+      <img src="https://via.placeholder.com/150" alt="Placeholder Image">
+
+      <h3>Audio</h3>
+      <audio controls>
+        <source src="sample.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+
+      <h3>Video</h3>
+      <video width="320" height="240" controls>
+        <source src="sample.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+
+      <h3>Embed</h3>
+      <embed src="sample.pdf" width="300" height="200" type="application/pdf">
+
+      <h3>Object</h3>
+      <object data="sample.pdf" type="application/pdf" width="300" height="200">
+        <p>Alternative text for unsupported object</p>
+      </object>
+
+      <h3>IFrame</h3>
+      <iframe src="https://example.com" width="300" height="200" title="Sample Iframe"></iframe>
+    </section>
+
+    <section id="graphics">
+      <h2>Graphics Tags</h2>
+
+      <h3>Canvas</h3>
+      <canvas id="myCanvas" width="200" height="100"></canvas>
+      <script>
+        const canvas = document.getElementById('myCanvas');
+        const ctx = canvas.getContext('2d');
+        ctx.fillStyle = 'blue';
+        ctx.fillRect(20, 20, 150, 50);
+      </script>
+
+      <h3>SVG</h3>
+      <svg width="200" height="100">
+        <circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
+        <text x="100" y="55" fill="black">SVG Text</text>
+      </svg>
+    </section>
+
+    <section id="extras">
+      <h2>Other Semantic and Interactive Tags</h2>
+      <article>
+        <h3>Sample Article</h3>
+        <p>This is an article element.</p>
+      </article>
+
+      <aside>
+        <p>This is an aside element with related info.</p>
+      </aside>
+
+      <details>
+        <summary>Click to expand details</summary>
+        <p>This content was hidden!</p>
+      </details>
+
+      <dialog open>
+        <p>This is a sample dialog box!</p>
+        <form method="dialog">
+          <button type="button">Close</button>
+        </form>
+      </dialog>
+
+      <p>Task progress: <progress value="70" max="100">70%</progress></p>
+      <p>Meter example: <meter value="0.6">60%</meter></p>
+      <p><output name="result">42</output></p>
+    </section>
+
+    <section id="rare">
+      <h2>Less Common Tags</h2>
+      <p>This paragraph contains a <wbr>word break opportunity.</p>
+      <p>Ruby Annotation: <ruby>漢<rt>Kan</rt>字<rt>ji</rt></ruby></p>
+      <p><data value="123">Product ID</data></p>
+      <template>
+        <p>This content is inside a template and will not render.</p>
+      </template>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Khushi. All rights reserved.</p>
+    <address>
+      Email: <a href="mailto:khushi@example.com">khushi@example.com</a><br>
+      Visit us at: <a href="https://example.com">example.com</a>
+    </address>
+    <p><small>Last updated: <time datetime="2025-07-17">July 17, 2025</time></small></p>
+  </footer>
+</body>
+
+</html>
